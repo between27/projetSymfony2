@@ -6,9 +6,9 @@
 
 {% block body %}
     <h1>My Characters</h1>
-    <ul>
+    <ul class="grid grid-cols-5">
         {% for character in characters %}
-            <li>{{ character.photoUrl.url }} - {{ character.element }}</li>
+            <img src="{{ character.photoUrl.url }}" />
             {# Ajoutez plus de détails selon vos besoins #}
         {% else %}
             <li>No characters found.</li>

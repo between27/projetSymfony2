@@ -15,6 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WeaponsController extends AbstractController
 {
+
+    #[isGranted('ROLE_USER')]
     #[Route('/weapons/index', name: 'app_weapons')]
     public function index(WeaponsRepository $weapon): Response
     {
@@ -82,6 +84,7 @@ class WeaponsController extends AbstractController
 
         return $this->redirectToRoute('app_weapons');
     }
+
 
 
 }
