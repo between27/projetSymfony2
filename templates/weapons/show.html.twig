@@ -1,0 +1,14 @@
+{# templates/weapons/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ weapon.name }}{% endblock %}
+
+{% block body %}
+    <h1>{{ weapon.name }}</h1>
+    <p>Type: {{ weapon.type }}</p>
+    <p>Rareté: {{ weapon.rarity }}</p>
+    <img src="{{ weapon.photoUrl.url }}" alt="Photo de {{ weapon.name }}">
+
+    <!-- Ajouter plus de détails si nécessaire -->
+{% endblock %}

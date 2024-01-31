@@ -6,11 +6,12 @@
 
 {% block body %}
     <h1>Liste des Armes</h1>
-    <ul class="grid grid-cols-5">
+    <ul class="grid grid-cols-5 gap-4">
         {% for weapon in weapons %}
-            <li>
+            <li class="border border-black">
                 <strong>{{ weapon.name }}</strong> - Type: {{ weapon.type }}, Rareté: {{ weapon.rarity }}
                 <img src="{{ weapon.photoUrl.url }}" alt="{{ weapon.name }}">
+                <a href="{{ path('app_weapons_show', {'id': weapon.id}) }}">Voir les détails</a>
             </li>
         {% else %}
             <li>Aucune arme trouvée.</li>

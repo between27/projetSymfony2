@@ -27,6 +27,10 @@ class WeaponsController extends AbstractController
     {
         $weapon = $weapon->find($id);
 
+        if (!$weapon) {
+            throw $this->createNotFoundException('L\'arme demandée n\'existe pas.');
+        }
+
         return $this->render('weapons/show.html.twig', [
             'controller_name' => 'WeaponsController',
             'weapon' => $weapon
