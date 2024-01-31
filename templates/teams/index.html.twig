@@ -1,0 +1,29 @@
+{# templates/team/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Équipes{% endblock %}
+
+{% block body %}
+    <h1>Liste des Équipes</h1>
+    <ul>
+        {% for team in teams %}
+            <li>
+                <h2>{{ team.name }}</h2>
+                <p>Membres de l'équipe :</p>
+                <div class="grid grid-cols-5 border-black border">
+                    {% for character in team.characterId %}
+                        <div>
+                        <p>{{ character.name }} - {{ character.element }}</p>
+                        <img src="{{ character.photoUrl.url }}" alt="{{ character.name }}" />
+                        </div>
+                    {% else %}
+                        <li>Aucun personnage dans cette équipe.</li>
+                    {% endfor %}
+                </div>
+            </li>
+        {% else %}
+            <li>Aucune équipe trouvée.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
