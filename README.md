@@ -1,5 +1,5 @@
 ## 🦕
-# MErimp
+# Merimp
 
 ## Description
 
@@ -47,12 +47,9 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
    ```bash
    git clone url_du_dépôt_votre_projet
 
-   ```bash
    composer install
 
-      ```bash
    npm install
 
-      ```bash
    npm run dev
    
