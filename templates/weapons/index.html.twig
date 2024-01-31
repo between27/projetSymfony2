@@ -12,6 +12,9 @@
                 <strong>{{ weapon.name }}</strong> - Type: {{ weapon.type }}, Rareté: {{ weapon.rarity }}
                 <img src="{{ weapon.photoUrl.url }}" alt="{{ weapon.name }}">
                 <a href="{{ path('app_weapons_show', {'id': weapon.id}) }}">Voir les détails</a>
+                {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path('weapon_delete', {'id': weapon.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette arme ?');">Supprimer</a>
+                {% endif %}
             </li>
         {% else %}
             <li>Aucune arme trouvée.</li>
