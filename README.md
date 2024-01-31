@@ -38,11 +38,21 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
 - [Composer](https://getcomposer.org/), le gestionnaire de dépendances pour PHP.
 - [Node.js](https://nodejs.org/) (qui inclut [npm](https://npmjs.com/)), pour gérer les packages JavaScript.
 
-### Étapes d'Installation
+### Installation
 
-1. **Cloner le dépôt**
+ **Cloner le dépôt**
 
    Commencez par cloner le dépôt Git sur votre machine locale en utilisant la commande suivante dans votre terminal :
 
    ```bash
    git clone url_du_dépôt_votre_projet
+
+   ```bash
+   composer install
+
+      ```bash
+   npm install
+
+      ```bash
+   npm run dev
+   
