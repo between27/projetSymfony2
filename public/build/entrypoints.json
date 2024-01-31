@@ -1,0 +1,14 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_pnpm_symfony_stimulus-bridge_3_2_2__hotwired_stimulus_3_2_2_node_modules-430958.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    }
+  }
+}
