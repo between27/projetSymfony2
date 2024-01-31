@@ -27,6 +27,9 @@ class Weapons
     #[ORM\ManyToMany(targetEntity: Characters::class, inversedBy: 'weapons')]
     private Collection $characterId;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?WeaponPhoto $photoUrl = null;
+
     public function __construct()
     {
         $this->characterId = new ArrayCollection();
@@ -93,6 +96,18 @@ class Weapons
     public function removeCharacterId(Characters $characterId): static
     {
         $this->characterId->removeElement($characterId);
+
+        return $this;
+    }
+
+    public function getPhotoUrl(): ?WeaponPhoto
+    {
+        return $this->photoUrl;
+    }
+
+    public function setPhotoUrl(?WeaponPhoto $photoUrl): static
+    {
+        $this->photoUrl = $photoUrl;
 
         return $this;
     }
