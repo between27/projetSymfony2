@@ -1,14 +1,32 @@
-{# templates/weapon/new.html.twig #}
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Ajouter une Nouvelle Arme{% endblock %}
 
 {% block body %}
-    <h1>Ajouter une Nouvelle Arme</h1>
+    <div class="max-w-md mx-auto mt-10">
+        <h1 class="text-2xl font-bold text-center mb-6">Ajouter une Nouvelle Arme</h1>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Ajouter</button>
-    {{ form_end(form) }}
+        {{ form_start(form, {'attr': {'class': 'space-y-4'}}) }}
+
+        {{ form_row(form.name, {
+            'attr': {'class': 'block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500'}
+        }) }}
+
+        {{ form_row(form.type, {
+            'attr': {'class': 'block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500'}
+        }) }}
+
+        {{ form_row(form.rarity, {
+            'attr': {'class': 'block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500'}
+        }) }}
+
+        {{ form_row(form.photoUrl, {
+            'attr': {'class': 'block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500'}
+        }) }}
+
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Ajouter
+        </button>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

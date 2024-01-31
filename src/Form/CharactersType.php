@@ -20,15 +20,18 @@ class CharactersType extends AbstractType
             ->add('name')
             ->add('element',ChoiceType::class,[
                 'choices' => ElementEnum::cases(),
-                'choice_label' => "value"
+                'choice_label' => fn(ElementEnum $enum) => $enum->value,
+                'choice_value' => fn(?ElementEnum $enum) => $enum?->value,
             ])
             ->add('weaponType', ChoiceType::class, [
                 'choices' => WeaponTypeEnum::cases(),
-                'choice_label' => "value",
+                'choice_label' => fn(WeaponTypeEnum $enum) => $enum->value,
+                'choice_value' => fn(?WeaponTypeEnum $enum) => $enum?->value,
             ])
             ->add('rarity', ChoiceType::class, [
                 'choices' => RarityEnum::cases(),
-                'choice_label' => "value",
+                'choice_label' => fn(RarityEnum $enum) => $enum->value,
+                'choice_value' => fn(?RarityEnum $enum) => $enum?->value,
             ])
             ->add('description')
             ->add('photoUrl', TextType::class, [

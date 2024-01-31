@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <div class="flex justify-between">
+        <div class="flex justify-between my-2">
         <h1 class="text-2xl font-bold text-gray-900 mb-6">My Characters</h1>
         <a href="{{ path('character_new') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter un perso</a>
         </div>
@@ -14,9 +14,9 @@
                     <img src="{{ character.photoUrl.url }}" alt="{{ character.name }}" class="w-full h-48 object-cover object-center">
                     <div class="p-4">
                         <h2 class="text-lg font-semibold text-gray-800">{{ character.name }}</h2>
-                        <p class="text-sm text-gray-600">Element: {{ character.element }}</p>
-                        <p class="text-sm text-gray-600">Weapon Type: {{ character.weaponType }}</p>
-                        <p class="text-sm text-gray-600">Rarity: {{ character.rarity }}</p>
+                        <p class="text-sm text-gray-600">Element: {{ character.element.value }}</p>
+                        <p class="text-sm text-gray-600">Weapon Type: {{ character.weaponType.value }}</p>
+                        <p class="text-sm text-gray-600">Rarity: {{ character.rarity.value }}</p>
                         <p class="mt-3 text-gray-700 text-sm">{{ character.description  }}</p>
                     </div>
                 </div>

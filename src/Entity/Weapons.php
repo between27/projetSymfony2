@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Enum\RarityEnum;
+use App\Enum\WeaponTypeEnum;
 use App\Repository\WeaponsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -19,10 +21,10 @@ class Weapons
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $type = null;
+    private ?WeaponTypeEnum $type = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $rarity = null;
+    private ?RarityEnum $rarity = null;
 
     #[ORM\ManyToMany(targetEntity: Characters::class, inversedBy: 'weapons')]
     private Collection $characterId;
@@ -52,24 +54,24 @@ class Weapons
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): ?WeaponTypeEnum
     {
         return $this->type;
     }
 
-    public function setType(string $type): static
+    public function setType(WeaponTypeEnum $type): static
     {
         $this->type = $type;
 
         return $this;
     }
 
-    public function getRarity(): ?string
+    public function getRarity(): ?RarityEnum
     {
         return $this->rarity;
     }
 
-    public function setRarity(string $rarity): static
+    public function setRarity(RarityEnum $rarity): static
     {
         $this->rarity = $rarity;
 

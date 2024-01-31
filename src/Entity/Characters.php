@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use App\Enum\ElementEnum;
+use App\Enum\RarityEnum;
+use App\Enum\WeaponTypeEnum;
 use App\Repository\CharactersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,13 +23,13 @@ class Characters
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $element = null;
+    private ?ElementEnum $element = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $weaponType = null;
+    private ?WeaponTypeEnum $weaponType = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $rarity = null;
+    private ?RarityEnum $rarity = null;
 
     #[ORM\ManyToMany(targetEntity: Weapons::class, mappedBy: 'characterId')]
     private Collection $weapons;
@@ -66,36 +69,36 @@ class Characters
         return $this;
     }
 
-    public function getElement(): ?string
+    public function getElement(): ?ElementEnum
     {
         return $this->element;
     }
 
-    public function setElement(string $element): static
+    public function setElement(ElementEnum $element): static
     {
         $this->element = $element;
 
         return $this;
     }
 
-    public function getWeaponType(): ?string
+    public function getWeaponType(): ?WeaponTypeEnum
     {
         return $this->weaponType;
     }
 
-    public function setWeaponType(string $weaponType): static
+    public function setWeaponType(WeaponTypeEnum $weaponType): static
     {
         $this->weaponType = $weaponType;
 
         return $this;
     }
 
-    public function getRarity(): ?string
+    public function getRarity(): ?RarityEnum
     {
         return $this->rarity;
     }
 
-    public function setRarity(string $rarity): static
+    public function setRarity(RarityEnum $rarity): static
     {
         $this->rarity = $rarity;
 
