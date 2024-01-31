@@ -1,0 +1,19 @@
+{# templates/weapon/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Armes{% endblock %}
+
+{% block body %}
+    <h1>Liste des Armes</h1>
+    <ul class="grid grid-cols-5">
+        {% for weapon in weapons %}
+            <li>
+                <strong>{{ weapon.name }}</strong> - Type: {{ weapon.type }}, Rareté: {{ weapon.rarity }}
+                <img src="{{ weapon.photoUrl.url }}" alt="{{ weapon.name }}">
+            </li>
+        {% else %}
+            <li>Aucune arme trouvée.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
