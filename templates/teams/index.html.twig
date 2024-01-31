@@ -1,29 +1,33 @@
-{# templates/team/list.html.twig #}
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Liste des Équipes{% endblock %}
 
 {% block body %}
-    <h1>Liste des Équipes</h1>
-    <ul>
-        {% for team in teams %}
-            <li>
-                <h2>{{ team.name }}</h2>
-                <p>Membres de l'équipe :</p>
-                <div class="grid grid-cols-5 border-black border">
-                    {% for character in team.characterId %}
-                        <div>
-                        <p>{{ character.name }} - {{ character.element }}</p>
-                        <img src="{{ character.photoUrl.url }}" alt="{{ character.name }}" />
-                        </div>
-                    {% else %}
-                        <li>Aucun personnage dans cette équipe.</li>
-                    {% endfor %}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex justify-between my-3">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Liste des Équipes</h1>
+            <a href="{{ path('team_new') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Ajouter une team</a>
+        </div>
+        <div class="space-y-4">
+            {% for team in teams %}
+                <div class="p-4 bg-white shadow rounded-lg">
+                    <h2 class="text-xl font-semibold text-gray-800">{{ team.name }}</h2>
+                    <p class="text-md text-gray-600 mb-2">Membres de l'équipe :</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {% for character in team.characterId %}
+                            <div class="flex flex-col items-center text-center">
+                                <img src="{{ character.photoUrl.url }}" alt="{{ character.name }}" class="w-24 h-24 object-cover rounded-full mx-auto">
+                                <p class="mt-2 font-medium text-gray-800">{{ character.name }}</p>
+                                <p class="text-sm text-gray-500">{{ character.element.value }}</p>
+                            </div>
+                        {% else %}
+                            <p class="text-gray-700">Aucun personnage dans cette équipe.</p>
+                        {% endfor %}
+                    </div>
                 </div>
-            </li>
-        {% else %}
-            <li>Aucune équipe trouvée.</li>
-        {% endfor %}
-    </ul>
+            {% else %}
+                <p class="text-gray-700">Aucune équipe trouvée.</p>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
