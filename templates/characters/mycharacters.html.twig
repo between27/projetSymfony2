@@ -1,17 +1,25 @@
-{# templates/character/my_characters.html.twig #}
-
 {% extends 'base.html.twig' %}
 
 {% block title %}My Characters{% endblock %}
 
 {% block body %}
-    <h1>My Characters</h1>
-    <ul class="grid grid-cols-5">
-        {% for character in characters %}
-            <img src="{{ character.photoUrl.url }}" />
-            {# Ajoutez plus de détails selon vos besoins #}
-        {% else %}
-            <li>No characters found.</li>
-        {% endfor %}
-    </ul>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <h1 class="text-2xl font-bold text-gray-900 mb-6">My Characters</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {% for character in characters %}
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <img src="{{ character.photoUrl.url }}" alt="{{ character.name }}" class="w-full h-48 object-cover object-center">
+                    <div class="p-4">
+                        <h2 class="text-lg font-semibold text-gray-800">{{ character.name }}</h2>
+                        <p class="text-sm text-gray-600">Element: {{ character.element }}</p>
+                        <p class="text-sm text-gray-600">Weapon Type: {{ character.weaponType }}</p>
+                        <p class="text-sm text-gray-600">Rarity: {{ character.rarity }}</p>
+                        <p class="mt-3 text-gray-700 text-sm">{{ character.description  }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div>No characters found.</div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
