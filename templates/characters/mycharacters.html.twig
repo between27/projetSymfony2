@@ -1,0 +1,17 @@
+{# templates/character/my_characters.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}My Characters{% endblock %}
+
+{% block body %}
+    <h1>My Characters</h1>
+    <ul>
+        {% for character in characters %}
+            <li>{{ character.photoUrl.url }} - {{ character.element }}</li>
+            {# Ajoutez plus de détails selon vos besoins #}
+        {% else %}
+            <li>No characters found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
