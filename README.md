@@ -1,6 +1,10 @@
 ## 🦕
 # Merimp
 
+## Test
+
+Le test es dispo juste ici https://youtu.be/lD_ZXikB1HQ
+
 ## Description
 
 Ce projet est une application web conçue pour gérer et afficher une collection de personnages et d'armes inspirée de l'univers Genshin Impact. Les utilisateurs peuvent ajouter, visualiser, modifier et supprimer des personnages ainsi que des armes, chacun avec des attributs spécifiques tels que l'élément, le type d'arme, la rareté et des descriptions. L'application offre une interface utilisateur intuitive et stylisée, permettant une navigation facile et une interaction agréable.
