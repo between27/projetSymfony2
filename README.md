@@ -49,7 +49,7 @@ Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre
    Commencez par cloner le dépôt Git sur votre machine locale en utilisant la commande suivante dans votre terminal :
 
    ```bash
-   git clone url_du_dépôt_votre_projet
+   git clone https://github.com/between27/projetSymfony2.git
 
    composer install
 
